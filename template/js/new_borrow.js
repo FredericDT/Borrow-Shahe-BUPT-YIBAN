@@ -144,7 +144,7 @@ function updateAvailableTime(roomId) {
     );
 }
 
-all_orders = []
+all_orders = [];
 $.post("./../logic/backend.php", "function=getAllLiveOrders", function (result) {
     all_orders = json = JSON.parse(result);
 });
@@ -166,6 +166,7 @@ function updateSelectableButton() {
     for (i = 0; i < at_tds.length; i++) {
         at_td = at_tds[i];
         if (at_td.innerHTML && (at_td.className != "disable") && (at_td.className != "weekday")) {
+            at_td.removeAttribute("tooltip");
             at_td.onclick = function () {
                 mark_change(this, this.parentNode.childNodes[1].attributes["name"].value, this.innerHTML);
             };
