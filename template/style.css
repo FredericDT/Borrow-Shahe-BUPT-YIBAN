@@ -1,0 +1,403 @@
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+/*
+ * style.css v1
+ * author @Dimpurr http://dimpurr.com
+ */
+
+body {
+	font-family: sans-serif;
+	margin-top: 60px;
+	background: url("img/dimpurr.com.bg.png");
+	background-size: 600px;
+}
+
+.page {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.nav {
+	display: block;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #121314;
+}
+
+.nav ul {
+	margin: 0;
+	padding: 0 20px;
+	min-width: 500px;
+}
+
+.nav ul li {
+	display: inline-block;
+	padding: 16px 8px;
+}
+
+.nav ul li a {
+	color: #DDD;
+	text-decoration: none;
+	transition: all ease 0.3s;
+}
+
+.nav ul li a:hover {
+	text-shadow: 0 0 3px #DDD;
+}
+
+.nav .nav_title {
+	margin-right: 10px;
+	padding-left: 24px;
+	padding-right: 24px;
+	background: #343536;
+}
+
+.nav .nav_title small {
+	opacity: 0.6;
+}
+
+.available_t, .available_t tr, .available_t td {
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.available_t {
+	margin-top: 72px;
+	box-shadow: 0 0 6px #DDD;
+}
+
+.available_t td:first-of-type {
+	width: 80px;
+	color: #EEE;
+	background: #777;
+	border: none;
+}
+
+.available_t td.weekday:hover {
+	background: #777;
+	cursor: default;
+}
+
+.available_t tr:first-of-type td:first-of-type {
+	border-radius: 3px 0 0 0;
+}
+
+.available_t tr:last-of-type td:first-of-type {
+	border-radius: 0 0 0 3px;
+}
+
+.available_t td {
+	width: calc(100%/17);
+	min-width: 40px;
+	padding: 8px 0;
+	background: #FFF;
+	border: 1px solid #F0F0F0;
+	cursor: pointer;
+	transition: all ease 0.2s;
+}
+
+.available_t td:hover, .available_t .time_selected {
+	background: #CCF;
+}
+
+.available_t td.disable {
+	background: #F0F0F0;
+	color: #AAA;
+	cursor: default;
+}
+
+.available_t td.disable:hover {
+	background: #F0F0F0;
+}
+
+.new_borrow .note {
+	margin: 16px 0 16px 4px;
+	color: #777;
+}
+
+.new_form input[type="radio"] {
+	display: none;
+}
+
+.new_form label {
+	display: inline-block;
+	margin: 4px 0 6px 8px;
+	cursor: pointer;
+}
+
+.new_form input + span {
+	display: inline-block;
+	padding: 8px 16px;
+	border-radius: 3px;
+	border: 1px solid #EEE;
+	transition: all ease 0.2s;
+}
+
+.new_form label:hover span {
+	box-shadow: 0 0 3px #EEE inset;
+}
+
+.new_form input:checked + span {
+	background: #EEE;
+}
+
+.new_form input[type="number"] {
+	margin: 0 8px 4px 0;
+	padding: 2px 8px;
+}
+
+.my_info {
+	text-align: center;
+	margin-bottom: 20px;
+}	
+
+.my_info h3::before {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.my_info h3 {
+	font-size: 16px;
+	font-weight: normal;
+	color: #777;
+}
+
+.my_info input {
+	width: 45%;
+	width: calc(50% - 3px);
+	margin: 2px 0;
+	padding: 9px 12px 6px 12px;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	box-shadow: 0 0 4px #EEE inset;
+	transition: all ease 0.2s;
+	box-sizing: border-box;
+}
+
+.my_info input:focus {
+	border: 1px solid #AAA;
+	outline: none;
+}
+
+.my_info input[type="button"] {
+	width: 90%;
+	width: calc(100%);
+	padding: 12px;
+	color: #DDD;
+	background: #343536;
+	box-shadow: none;
+	transition: all ease 0.2s;
+}
+
+.my_info input[type="button"]:hover {
+	background: #3A3B3C;
+}
+
+.my_info input[type="button"]:active {
+	background: #121314;
+}
+
+.my_info.my_info_white input[type="submit"] {
+	color: #777;
+	background: #FAFAFA;
+}
+
+.my_info.my_info_white input[type="submit"]:hover {
+	background: #FFF;
+}
+
+.my_info.my_info_white input[type="submit"]:active {
+	background: #F0F0F0;
+}
+
+.borrow_list {
+	list-style: none;
+	margin: 0;
+    margin-bottom: 50px;
+	padding: 0;
+}
+
+.borrow_item {
+	margin: 8px 0;
+	padding: 0;
+	background: #FFF;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	box-shadow: 0 0 4px #DDD;
+}
+
+.borrow_item header {
+	padding: 12px 24px;
+	background: #454647;
+	color: #EEE;
+	border-radius: 3px 3px 0 0;
+}
+
+.borrow_item header h2 {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-size: 18px;
+}
+
+.borrow_item header h3 {
+	float: right;
+	margin: 0;
+	padding: 0;
+	margin-top: 3px;
+	font-weight: normal;
+	font-size: 14px;
+	opacity: 0.7;
+}
+
+.borrow_item p {
+	margin: 8px 24px;
+}
+
+.borrow_item p > span {
+	margin-right: 12px;
+	color: #F00;
+}
+
+.borrow_item_btn {
+	float: right;
+	position: relative;
+	top: -26px;
+	list-style: none;
+	margin: 0;
+	padding: 0 24px;
+}
+
+.borrow_item_btn li {
+	margin: 0;
+	padding: 0;
+}
+
+.borrow_item_btn li a {
+	text-decoration: none;
+}
+
+.admin .admin_ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background: #FFF;
+	border-radius: 3px;
+}
+
+.admin .admin_ul > li {
+	margin: 0 0 -1px 0;
+	padding: 8px 24px;
+	border: 1px solid #DDD;
+}
+
+.admin .admin_ul > li:first-of-type {
+	border-radius: 3px 3px 0 0;
+}
+
+.admin .admin_ul > li:last-of-type {
+	border-radius: 0 0 3px 3px;
+}
+
+.admin .admin_ul > li:only-of-type {
+	border-radius: 3px;
+}
+
+.admin .work_time li h5 {
+	position: relative;
+	display: inline;
+	margin-right: 42px;
+	font-size: 16px;
+}
+
+.admin .work_time li h5::after {
+	content: "";
+	position: absolute;
+	left: 110px;
+	top: -11px;
+	display: block;
+	height: 44px;
+	width: 1px;
+	box-sizing: border-box;
+	background: #EEE;
+}
+
+.admin .work_time input {
+	padding: 3px 12px 3px 12px;
+	border: 1px solid #DDD;
+	border-radius: 2px;
+}
+
+.admin .work_time input:focus {
+	outline: none;
+	border-color: #AAA;
+}
+
+.admin .work_time_f input[type="submit"] {
+	margin: 2px 0;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	box-shadow: 0 0 4px #EEE inset;
+	box-sizing: border-box;
+	width: 90%;
+	width: calc(100%);
+	padding: 12px;
+	color: #DDD;
+	background: #343536;
+	box-shadow: none;
+	transition: all ease 0.2s;
+}
+
+.admin .work_time_f input[type="submit"]:hover {
+	background: #3A3B3C;
+}
+
+.admin .work_time_f input[type="submit"]:active {
+	background: #121314;
+}
+
+.admin .blacklist .borrow_item_btn {
+	top: 0;
+	padding-right: 0;
+}
+
+[tooltip]:before {            
+    position : absolute;
+    content : attr(tooltip);
+    display: none;
+}
+[tooltip]:hover:before {    
+    display: block;
+    color: black;
+    background-color: #dbdabe;
+    margin-top : 10px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+
+@media ( max-width: 600px ) {
+
+body {
+	margin-top: 0;
+}
+
+.nav {
+	position: static;
+}
+
+.nav ul li {
+	display: block;
+}
+
+.borrow_item header h3 { 
+	float: none;
+}
+	
+}	
